@@ -1,5 +1,5 @@
--- ESP Preview System for Roblox
--- This creates a visual preview window showing ESP components
+-- Complete ESP Preview System - Ready for loadstring
+-- Usage: loadstring(game:HttpGet("your-url"))()
 
 local ESPPreview = {}
 ESPPreview.__index = ESPPreview
@@ -455,4 +455,9 @@ function ESPPreview:Destroy()
     end
 end
 
-return ESPPreview
+-- Auto-create preview when loaded
+local preview = ESPPreview.new()
+print("ESP Preview loaded and displayed!")
+
+-- Return the module and instance for manual control
+return ESPPreview, preview
