@@ -108,7 +108,7 @@ function ESPPreview:CreateESPComponents()
     local charHeight = 120
     local boxPadding = 15
 
-     self:CreateBox(centerX - (charWidth / 2 + boxPadding), centerY - (charHeight / 2 + boxPadding),
+    self:CreateBox(centerX - (charWidth / 2 + boxPadding), centerY - (charHeight / 2 + boxPadding),
                    charWidth + boxPadding * 2, charHeight + boxPadding * 2)
 
     self:CreateHealthBar(centerX - (charWidth / 2 + boxPadding) - 8, centerY - (charHeight / 2 + boxPadding),
@@ -118,7 +118,6 @@ function ESPPreview:CreateESPComponents()
 
     self:CreateTextElements(centerX, centerY - (charHeight / 2 + boxPadding))
 end
-    instance:StartAnimations()
 
 function ESPPreview:CreateBox(x, y, width, height)
     local boxOutline = Instance.new("Frame")
@@ -184,7 +183,6 @@ function ESPPreview:CreateHealthBar(x, y, width, height)
     healthText.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
     healthText.Parent = self.PreviewArea
 
-
     self.Components.HealthBar = {
         Background = healthBg,
         Bar = healthBar,
@@ -206,63 +204,63 @@ function ESPPreview:CreateCharacter(x, y, width, height)
         local color = layer == 1 and PREVIEW_CONFIG.ChamColor1 or PREVIEW_CONFIG.ChamColor2
         local offset = layer == 1 and 2 or 0
 
-      local head = Instance.new("Frame")
-head.Size = UDim2.new(0, headSize + offset, 0, headSize + offset)
-head.Position = UDim2.new(0, x + width / 2 - headSize / 2 - offset / 2, 0, y - offset / 2)
-head.BackgroundColor3 = color
-head.BackgroundTransparency = transparency
-head.BorderSizePixel = 0
-head.Parent = self.PreviewArea
+        local head = Instance.new("Frame")
+        head.Size = UDim2.new(0, headSize + offset, 0, headSize + offset)
+        head.Position = UDim2.new(0, x + width / 2 - headSize / 2 - offset / 2, 0, y - offset / 2)
+        head.BackgroundColor3 = color
+        head.BackgroundTransparency = transparency
+        head.BorderSizePixel = 0
+        head.Parent = self.PreviewArea
 
-local torso = Instance.new("Frame")
-torso.Size = UDim2.new(0, torsoWidth + offset, 0, torsoHeight + offset)
-torso.Position = UDim2.new(0, x + width / 2 - torsoWidth / 2 - offset / 2, 0, y + headSize - offset / 2)
-torso.BackgroundColor3 = color
-torso.BackgroundTransparency = transparency
-torso.BorderSizePixel = 0
-torso.Parent = self.PreviewArea
+        local torso = Instance.new("Frame")
+        torso.Size = UDim2.new(0, torsoWidth + offset, 0, torsoHeight + offset)
+        torso.Position = UDim2.new(0, x + width / 2 - torsoWidth / 2 - offset / 2, 0, y + headSize - offset / 2)
+        torso.BackgroundColor3 = color
+        torso.BackgroundTransparency = transparency
+        torso.BorderSizePixel = 0
+        torso.Parent = self.PreviewArea
 
-local leftArm = Instance.new("Frame")
-leftArm.Size = UDim2.new(0, limbWidth + offset, 0, limbHeight + offset)
-leftArm.Position = UDim2.new(0, x - offset / 2, 0, y + headSize - offset / 2)
-leftArm.BackgroundColor3 = color
-leftArm.BackgroundTransparency = transparency
-leftArm.BorderSizePixel = 0
-leftArm.Parent = self.PreviewArea
+        local leftArm = Instance.new("Frame")
+        leftArm.Size = UDim2.new(0, limbWidth + offset, 0, limbHeight + offset)
+        leftArm.Position = UDim2.new(0, x - offset / 2, 0, y + headSize - offset / 2)
+        leftArm.BackgroundColor3 = color
+        leftArm.BackgroundTransparency = transparency
+        leftArm.BorderSizePixel = 0
+        leftArm.Parent = self.PreviewArea
 
-local rightArm = Instance.new("Frame")
-rightArm.Size = UDim2.new(0, limbWidth + offset, 0, limbHeight + offset)
-rightArm.Position = UDim2.new(0, x + width - limbWidth - offset / 2, 0, y + headSize - offset / 2)
-rightArm.BackgroundColor3 = color
-rightArm.BackgroundTransparency = transparency
-rightArm.BorderSizePixel = 0
-rightArm.Parent = self.PreviewArea
+        local rightArm = Instance.new("Frame")
+        rightArm.Size = UDim2.new(0, limbWidth + offset, 0, limbHeight + offset)
+        rightArm.Position = UDim2.new(0, x + width - limbWidth - offset / 2, 0, y + headSize - offset / 2)
+        rightArm.BackgroundColor3 = color
+        rightArm.BackgroundTransparency = transparency
+        rightArm.BorderSizePixel = 0
+        rightArm.Parent = self.PreviewArea
 
-local leftLeg = Instance.new("Frame")
-leftLeg.Size = UDim2.new(0, limbWidth + offset, 0, limbHeight + offset)
-leftLeg.Position = UDim2.new(0, x + width / 2 - limbWidth - offset / 2, 0, y + headSize + torsoHeight - offset / 2)
-leftLeg.BackgroundColor3 = color
-leftLeg.BackgroundTransparency = transparency
-leftLeg.BorderSizePixel = 0
-leftLeg.Parent = self.PreviewArea
+        local leftLeg = Instance.new("Frame")
+        leftLeg.Size = UDim2.new(0, limbWidth + offset, 0, limbHeight + offset)
+        leftLeg.Position = UDim2.new(0, x + width / 2 - limbWidth - offset / 2, 0, y + headSize + torsoHeight - offset / 2)
+        leftLeg.BackgroundColor3 = color
+        leftLeg.BackgroundTransparency = transparency
+        leftLeg.BorderSizePixel = 0
+        leftLeg.Parent = self.PreviewArea
 
-local rightLeg = Instance.new("Frame")
-rightLeg.Size = UDim2.new(0, limbWidth + offset, 0, limbHeight + offset)
-rightLeg.Position = UDim2.new(0, x + width / 2 + offset / 2, 0, y + headSize + torsoHeight - offset / 2)
-rightLeg.BackgroundColor3 = color
-rightLeg.BackgroundTransparency = transparency
-rightLeg.BorderSizePixel = 0
-rightLeg.Parent = self.PreviewArea
+        local rightLeg = Instance.new("Frame")
+        rightLeg.Size = UDim2.new(0, limbWidth + offset, 0, limbHeight + offset)
+        rightLeg.Position = UDim2.new(0, x + width / 2 + offset / 2, 0, y + headSize + torsoHeight - offset / 2)
+        rightLeg.BackgroundColor3 = color
+        rightLeg.BackgroundTransparency = transparency
+        rightLeg.BorderSizePixel = 0
+        rightLeg.Parent = self.PreviewArea
 
-self.Components.Character["Layer" .. layer] = {
-    Head = head,
-    Torso = torso,
-    LeftArm = leftArm,
-    RightArm = rightArm,
-    LeftLeg = leftLeg,
-    RightLeg = rightLeg
-}
-
+        self.Components.Character["Layer" .. layer] = {
+            Head = head,
+            Torso = torso,
+            LeftArm = leftArm,
+            RightArm = rightArm,
+            LeftLeg = leftLeg,
+            RightLeg = rightLeg
+        }
+    end
 
     self:CreateSkeleton(x, y, width, height)
 end
@@ -372,12 +370,13 @@ function ESPPreview:CreateTextElements(centerX, topY)
     tool.TextStrokeTransparency = 0
     tool.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
     tool.Parent = self.PreviewArea
+
     local flags = Instance.new("TextLabel")
     flags.Name = "Flags"
     flags.Size = UDim2.new(0, 60, 0, 60)
     flags.Position = UDim2.new(0, centerX + 45, 0, topY + 20)
     flags.BackgroundTransparency = 1
-    flags.Text = "VISIBLE\\nMOVING\\nJUMPING"
+    flags.Text = "VISIBLE\nMOVING\nJUMPING"
     flags.TextColor3 = Color3.fromRGB(255, 255, 255)
     flags.TextSize = 10
     flags.Font = Enum.Font.Code
@@ -457,4 +456,3 @@ function ESPPreview:Destroy()
 end
 
 return ESPPreview
-end;
